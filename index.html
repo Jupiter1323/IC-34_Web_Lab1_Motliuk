@@ -5,61 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Звіт з Лабораторних Робіт</title>
     <style>
-        /* Основні стилі для сторінки */
+        /* Загальні стилі для сторінки */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
         }
+
         .container {
             width: 90%;
             max-width: 1200px;
+            border: 2px solid black;
+            padding: 20px;
             display: grid;
             grid-template-areas: 
-                "header header"
-                "sidebar content";
-            grid-template-columns: 1fr 3fr;
-            gap: 20px;
-            padding: 20px;
-            border: 2px solid black;
+                "header header header"
+                "sidebar content content";
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+            background: #fff;
         }
+
         header {
             grid-area: header;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
             border-bottom: 2px solid black;
+            padding: 10px 0;
         }
+
         .title {
             text-align: left;
         }
+
+        .title h1, .title h2 {
+            margin: 0;
+            padding: 0;
+        }
+
         .student-info {
             text-align: right;
         }
-        .sidebar {
-            grid-area: sidebar;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+
+        .student-info p {
+            margin: 0;
         }
-        .sidebar div {
-            padding: 10px;
-            border: 1px solid black;
-            background-color: #f0f0f0;
-        }
-        .content {
-            grid-area: content;
-            border: 1px solid black;
-            padding: 20px;
-            min-height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .photo {
+
+        .student-photo {
             border: 1px solid black;
             width: 120px;
             height: 120px;
@@ -69,12 +66,37 @@
             align-items: center;
             margin-top: 10px;
         }
+
+        .sidebar {
+            grid-area: sidebar;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar div {
+            padding: 10px;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .content {
+            grid-area: content;
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 400px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Шапка з заголовком і інформацією про студента -->
+        <!-- Заголовок -->
         <header>
             <div class="title">
                 <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
@@ -82,12 +104,12 @@
             </div>
             <div class="student-info">
                 <p><strong>Студенти групи</strong></p>
-                <p>Іванов Іван Іванович</p>
-                <div class="photo">ФОТО СТУДЕНТА</div>
+                <p>Мотлюк Юрій Олегович</p>
+                <div class="student-photo">ФОТО СТУДЕНТА</div>
             </div>
         </header>
 
-        <!-- Бічне меню для розділів звіту -->
+        <!-- Меню зліва -->
         <div class="sidebar">
             <div>Опис предметного середовища</div>
             <div>Тема, Мета, Місце</div>
@@ -98,7 +120,7 @@
             <div>ВИСНОВКИ</div>
         </div>
 
-        <!-- Основний блок для виведення інформації -->
+        <!-- Основний блок -->
         <div class="content">
             <h3>Місце введення інформації</h3>
             <p>Тут буде розміщено основний контент звіту, включаючи HTML-коди, скріншоти, теоретичні описи та інше.</p>
