@@ -4,7 +4,7 @@ let currentSection = null;
 // Функція для відображення вмісту лабораторних робіт
 function displayLabContent(labNumber) {
     const content = document.getElementById('mainContent');
-    content.textContent = `Вміст для лабораторної роботи №${labNumber}. (сайт)`;
+    content.innerHTML = `Вміст для лабораторної роботи №${labNumber}. <a href="index.html" class="home-link">(сайт)</a>`;  // Додаємо HTML
 }
 
 // Функція для вибору лабораторної роботи
@@ -41,9 +41,9 @@ function showContent(sectionNumber, sectionTitle) {
     const content = document.getElementById('mainContent');
     if (sectionNumber === 4) {
         // Просто відображаємо текст без зображення для section4
-        content.textContent = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
+        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
     } else {
-        content.textContent = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
+        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
     }
 }
 

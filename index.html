@@ -9,67 +9,162 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
-        /* Стиль для банера */
+
+        /* Банер */
         .banner {
             width: 100%;
-            height: 300px;
-            background-image: url('your-banner-image.jpg');
+            height: 400px; /* Збільшено висоту банера */
+            background-image: url('images/image2.jpg'); /* Шлях до вашого зображення */
             background-size: cover;
             background-position: center;
+            position: relative;
         }
-        /* Стиль для основного контенту */
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Трохи затемнення для тексту */
+        }
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+
+        /* Основний контент */
         .main-content {
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        /* Таблиця ігор */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        table, th, td {
+
+        th, td {
+            padding: 15px;
+            text-align: left;
             border: 1px solid #ddd;
         }
-        th, td {
-            padding: 8px;
-            text-align: left;
+
+        th {
+            background-color: #4CAF50;
+            color: white;
         }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Стиль для форм */
         form {
-            margin: 20px 0;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input, textarea {
+
+        textarea, input {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 12px;
+            margin-top: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 16px;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
         }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Навігація */
         nav {
-            background-color: #f8f8f8;
-            padding: 10px 20px;
+            background-color: #333;
+            padding: 10px;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 10px;
+            justify-content: center;
         }
+
         nav ul li {
-            display: inline;
+            margin: 0 15px;
         }
+
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: white;
             font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .go-to-report {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .go-to-report a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .go-to-report a:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -77,64 +172,61 @@
 
     <!-- Банер -->
     <div class="banner">
-        <!-- Зображення для банера -->
+        <h1>GameHub</h1>
     </div>
-
-    <!-- Заголовок сайту -->
-    <header>
-        <div class="main-content">
-            <h1>Назва вашого сайту</h1>
-            <p>Веб-застосунок для купівлі комп'ютерних ігор дозволяє користувачам переглядати різні ігри, ознайомлюватися з їх описом, ціною та технічними вимогами. Користувачі можуть додавати обрані ігри до кошика та здійснювати покупку через інтегровану платіжну систему.</p>
-        </div>
-    </header>
-
-    <!-- Меню навігації -->
-    <nav>
-        <ul>
-            <li><a href="report.html">Перейти на репорт</a></li>
-        </ul>
-    </nav>
 
     <!-- Основний контент -->
     <section class="main-content">
         <h2>Каталог ігор</h2>
+
         <!-- Таблиця ігор -->
         <table>
             <tr>
                 <th>№</th>
                 <th>Назва гри</th>
                 <th>Опис гри</th>
+                <th>Ціна</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Ігра 1</td>
-                <td>Опис гри 1</td>
+                <td>S.T.A.L.K.E.R.: Shadow of Chernobyl</td>
+                <td>Перша гра серії, що занурює в атмосферу Зони відчуження після Чорнобильської катастрофи, де гравець бореться за виживання серед мутантів та інших сталкерів.</td>
+                <td>250 грн</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Ігра 2</td>
-                <td>Опис гри 2</td>
+                <td>S.T.A.L.K.E.R.: Clear Sky</td>
+                <td>Пріквел до "Shadow of Chernobyl", в якому розповідається про події перед основною грою та боротьбу між сталкерами й військовими угрупованнями.</td>
+                <td>300 грн</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>Ігра 3</td>
-                <td>Опис гри 3</td>
+                <td>S.T.A.L.K.E.R.: Call of Pripyat</td>
+                <td>Третя частина серії, де гравець грає за агента СБУ, що відправлений в зону для розслідування та пошуку причин аномалій у районі Прип'яті.</td>
+                <td>350 грн</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>S.T.A.L.K.E.R. 2: Heart of Chernobyl</td>
+                <td>Оголошена нова частина серії, яка переносить гравців у нову Зону, з новими аномаліями, мутантами та можливістю впливати на розвиток подій.</td>
+                <td>700 грн</td>
             </tr>
         </table>
 
-        <!-- Списки -->
-        <h3>Нумерований список:</h3>
+        <h3>Особливості кожної гри:</h3>
         <ol>
-            <li>Перша позиція</li>
-            <li>Друга позиція</li>
-            <li>Третя позиція</li>
+            <li><strong>S.T.A.L.K.E.R.: Shadow of Chernobyl:</strong> Реалістична атмосфера постапокаліпсису з глибоким сюжетом.</li>
+            <li><strong>S.T.A.L.K.E.R.: Clear Sky:</strong> Додаткові місії та сюжетні лінії з новими персонажами.</li>
+            <li><strong>S.T.A.L.K.E.R.: Call of Pripyat:</strong> Покращена графіка та більш різноманітні аномалії.</li>
+            <li><strong>S.T.A.L.K.E.R. 2: Heart of Chernobyl:</strong> Інноваційний відкритий світ та нові технології гри.</li>
         </ol>
 
-        <h3>Маркований список:</h3>
+        <h3>Функції та можливості ігор:</h3>
         <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
+            <li>Відкритий світ з можливістю дослідження</li>
+            <li>Реалістичні погодні умови та день-ніч</li>
+            <li>Механіка виживання і ресурси</li>
+            <li>Система репутації та вплив на сюжет</li>
         </ul>
 
         <h3>Форма:</h3>
@@ -144,6 +236,13 @@
             <button type="submit">Відправити відгук</button>
         </form>
     </section>
+
+    <!-- Меню навігації -->
+    <nav>
+        <ul>
+            <li><a href="report.html">Перейти на звіт</a></li>
+        </ul>
+    </nav>
 
     <!-- Футер -->
     <footer>
