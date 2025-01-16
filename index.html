@@ -3,11 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з лабораторних робіт</title>
+    <title>Веб-застосунок для купівлі комп'ютерних ігор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Стиль для банера */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('your-banner-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Стиль для основного контенту */
+        .main-content {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Ласкаво просимо на сайт звітів!</h1>
-    <p>Щоб перейти до звіту, натискайте на посилання нижче:</p>
-    <a href="report.html">Перейти до звіту</a> <!-- Посилання на репорт -->
+
+    <!-- Банер -->
+    <div class="banner">
+        <!-- Зображення для банера -->
+    </div>
+
+    <!-- Заголовок сайту -->
+    <header>
+        <div class="main-content">
+            <h1>Назва вашого сайту</h1>
+            <p>Веб-застосунок для купівлі комп'ютерних ігор дозволяє користувачам переглядати різні ігри, ознайомлюватися з їх описом, ціною та технічними вимогами. Користувачі можуть додавати обрані ігри до кошика та здійснювати покупку через інтегровану платіжну систему.</p>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <section class="main-content">
+        <h2>Каталог ігор</h2>
+        <!-- Таблиця ігор -->
+        <table>
+            <tr>
+                <th>№</th>
+                <th>Назва гри</th>
+                <th>Опис гри</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Ігра 1</td>
+                <td>Опис гри 1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ігра 2</td>
+                <td>Опис гри 2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ігра 3</td>
+                <td>Опис гри 3</td>
+            </tr>
+        </table>
+
+        <!-- Списки -->
+        <h3>Нумерований список:</h3>
+        <ol>
+            <li>Перша позиція</li>
+            <li>Друга позиція</li>
+            <li>Третя позиція</li>
+        </ol>
+
+        <h3>Маркований список:</h3>
+        <ul>
+            <li>Пункт 1</li>
+            <li>Пункт 2</li>
+            <li>Пункт 3</li>
+        </ul>
+
+        <h3>Форма:</h3>
+        <form action="#">
+            <label for="feedback">Ваш відгук:</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Напишіть ваш відгук..."></textarea>
+            <button type="submit">Відправити відгук</button>
+        </form>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2025 Ваш сайт. Всі права захищені.</p>
+    </footer>
+
 </body>
 </html>
