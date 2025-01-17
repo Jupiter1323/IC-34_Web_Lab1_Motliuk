@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
+                <h2>З дисципліни «ІНТЕРНЕТ-ТЕХНОЛОГІЇ та ПРОЄКТУВАННЯ WEB-ЗАСТОСУВАНЬ»</h2>
+                <p>Студенти групи ІС-34 Мотлюк Юрій Олегович</p>
+            </div>
+            <div class="photo-student">
+                <img src="images/image1.jpg" alt="Фото студента">
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu-row">
+                <button onclick="selectLab(1)" id="lab1">Лабораторна робота №1</button>
+                <button>Лабораторна робота №2</button> 
+                <button>Лабораторна робота №3</button> 
+                <button>Лабораторна робота №4</button> 
+                <button>Лабораторна робота №5</button>
+            </div>
+            <div class="menu-row">
+                <button>Лабораторна робота №6</button>
+                <button>Лабораторна робота №7</button>
+                <button>Лабораторна робота №8</button>
+                <button>Лабораторна робота №9</button>
+            </div>
+        </div>
+
+        <!-- Content Section for Lab 1 -->
+        <div class="content-section">
+            <div class="sidebar">
+                <button class="medium" onclick="showContent(1, 'Опис структури')" id="section1">Опис структури</button>
+                <button class="medium" onclick="showContent(2, 'Тема Мета Місце')" id="section2">Тема Мета Місце</button>
+                <button class="medium" onclick="showContent(3, 'СТРУКТУРА ДОКУМЕНТА')" id="section3">СТРУКТУРА ДОКУМЕНТА</button>
+                <button class="small" onclick="showContent(4, 'HTML-код ТАБЛИЦЬ')" id="section4">HTML-код ТАБЛИЦЬ</button>
+                <button class="small" onclick="showContent(5, 'HTML-код ФОРМИ')" id="section5">HTML-код ФОРМИ</button>
+                <button class="small" onclick="showContent(6, 'HTML-код ЗОБРАЖЕННЯ')" id="section6">HTML-код ЗОБРАЖЕННЯ</button>
+                <button class="medium" onclick="showContent(7, 'ВИСНОВКИ')" id="section7">ВИСНОВКИ</button>
+            </div>
+            <div class="main">
+                <div class="content" id="mainContent">
+                    Вміст для лабораторної роботи №1.
+                    <a href="index.html" class="home-link">(сайт)</a>
+                </div>
+
+                <!-- Screenshot Container - initially hidden -->
+                <div id="screenshotsContainer" class="screenshots-container" style="display: none;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
