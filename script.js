@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let currentLab = 1;
 let currentSection = null;
 
@@ -24,6 +25,15 @@ const imageCaseHTML2 = `
 function displayLabContent(labNumber) {
     const content = document.getElementById('mainContent');
     content.innerHTML = `Посилання на сайт. <a href="index.html" class="home-link">(сайт)</a>`;
+=======
+let currentLab = 1; 
+let currentSection = null; 
+
+// Функція для відображення вмісту лабораторних робіт
+function displayLabContent(labNumber) {
+    const content = document.getElementById('mainContent');
+    content.innerHTML = `Вміст для лабораторної роботи №${labNumber}. <a href="index.html" class="home-link">(сайт)</a>`;  // Додаємо HTML
+>>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 // Функція для вибору лабораторної роботи
@@ -40,6 +50,10 @@ function selectLab(labNumber) {
     activeButton.style.fontSize = '18px';
 
     displayLabContent(labNumber);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
     showContent(0, 'Сайт');
 }
 
@@ -57,6 +71,7 @@ function showContent(sectionNumber, sectionTitle) {
     activeButton.style.fontSize = '18px';
 
     const content = document.getElementById('mainContent');
+<<<<<<< HEAD
 
     // Вміст для конкретних розділів лабораторної роботи 1
     if (currentLab === 1) {
@@ -195,6 +210,13 @@ function showContent(sectionNumber, sectionTitle) {
         }
     } else {
         content.innerHTML = `Вміст для лабораторної роботи №${currentLab}. ${sectionTitle}`;
+=======
+    if (sectionNumber === 4) {
+        // Просто відображаємо текст без зображення для section4
+        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
+    } else {
+        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
+>>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
     }
 }
 
