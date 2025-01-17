@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// Глобальні змінні
 let currentLab = 1;
 let currentSection = null;
 
@@ -21,40 +21,63 @@ const imageCaseHTML2 = `
 </div>
 `;
 
-// Функція для відображення вмісту лабораторної роботи
-function displayLabContent(labNumber) {
-    const content = document.getElementById('mainContent');
-    content.innerHTML = `Посилання на сайт. <a href="index.html" class="home-link">(сайт)</a>`;
-=======
-let currentLab = 1; 
-let currentSection = null; 
+const imageCaseHTML3 = `
+<div class="image-case">
+    <img src="images/image6.png" alt="Фото студента">
+</div>
+`;
 
-// Функція для відображення вмісту лабораторних робіт
-function displayLabContent(labNumber) {
-    const content = document.getElementById('mainContent');
-    content.innerHTML = `Вміст для лабораторної роботи №${labNumber}. <a href="index.html" class="home-link">(сайт)</a>`;  // Додаємо HTML
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
-}
+const imageCaseHTML4 = `
+<div class="image-case">
+    <img src="images/image7.png" alt="Фото студента">
+</div>
+`;
+
+const imageCaseHTML5 = `
+<div class="image-case">
+    <img src="images/image8.png" alt="Фото студента">
+</div>
+`;
+
 
 // Функція для вибору лабораторної роботи
 function selectLab(labNumber) {
     currentLab = labNumber;
 
+    // Очищення активних кнопок меню
     document.querySelectorAll('.menu button').forEach(button => {
         button.classList.remove('active');
         button.style.fontSize = '14px';
     });
 
+    // Додавання стилю активної кнопки
     const activeButton = document.getElementById(`lab${labNumber}`);
     activeButton.classList.add('active');
     activeButton.style.fontSize = '18px';
 
-    displayLabContent(labNumber);
-<<<<<<< HEAD
-=======
+    // Оновлення сайдбару для вибраної лабораторної роботи
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.innerHTML = ''; // Очищуємо попередній вміст сайдбару
 
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
-    showContent(0, 'Сайт');
+    let sections = []; // Масив назв секцій для лабораторії
+
+    if (labNumber === 1) {
+        sections = ['Опис структури', 'Тема Мета Місце', 'Структура документа', 'HTML-код таблиці', 'HTML-код форми', 'HTML-код зображення', 'Висновок'];
+    } else if (labNumber === 2) {
+        sections = ['Тема Мета Місце ЛР2', 'Способи підключення стилів', 'Селектори', 'Селектор тегу', 'Селектор класу', 'Селектор ідентифікаторів', 'Інші селектори', 'CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки', 'Висновки'];
+    }
+
+    // Додавання кнопок до сайдбару
+    sections.forEach((title, index) => {
+        const button = document.createElement('button');
+        button.innerText = title;
+        button.id = `section${index + 1}`;
+        button.onclick = () => showContent(index + 1, title);
+        sidebar.appendChild(button);
+    });
+
+    // Відображення вмісту першого розділу для вибраної лабораторної
+    showContent(0, sections[0]);
 }
 
 // Функція для відображення вмісту кожного розділу
@@ -71,7 +94,6 @@ function showContent(sectionNumber, sectionTitle) {
     activeButton.style.fontSize = '18px';
 
     const content = document.getElementById('mainContent');
-<<<<<<< HEAD
 
     // Вміст для конкретних розділів лабораторної роботи 1
     if (currentLab === 1) {
@@ -89,15 +111,14 @@ function showContent(sectionNumber, sectionTitle) {
 5. Навігація: Меню дозволяє легко переходити між сторінками, включаючи сторінки з описом предметного середовища та звітами.
 6. Футер: Футер містить інформацію про авторські права, завершуючи структуру сайту.
 
-
 Веб-застосунок для купівлі комп'ютерних ігор дозволяє користувачам переглядати різні ігри, ознайомлюватися з їх описом, ціною та технічними вимогами. 
 Користувачі можуть додавати обрані ігри до кошика та здійснювати покупку через інтегровану платіжну систему. 
 Після завершення оплати користувач отримує доступ до цифрового ключа або можливість завантажити гру.
 Користувач із правами адміністратора може редагувати наявні ігри в каталозі, змінювати їхні характеристики, додавати нові ігри та видаляти застарілі або непотрібні позиції.
 <!-- Посилання на сайт -->
 <p>Для перегляду опис предметного середовища перейдіть за посиланням: <a href="subject.html" target="_blank">Опис предметного середовища</a>.</p>
+<p>Посилання на сайт. <a href="index.html" class="home-link">(сайт)</a>.</p>
             `;
-            
         } else if (sectionNumber === 2) {
             content.innerHTML = `
                 <h3>Тема Мета Місце</h3>
@@ -130,6 +151,7 @@ function showContent(sectionNumber, sectionTitle) {
                 - Контейнер для скріншотів: Може бути прихований або показаний в залежності від вибору.
                 8. Підключення скрипта: Для роботи інтерактивних елементів підключається зовнішній скрипт.</p>
             `;
+
         } else if (sectionNumber === 4) {
             content.innerHTML = `
                 <h3>HTML-код ТАБЛИЦІ:</h3>
@@ -204,19 +226,232 @@ function showContent(sectionNumber, sectionTitle) {
 <p>Під час роботи було створено HTML-документ зі структурою, що включає таблиці, списки, зображення, посилання та форми. 
 Реалізовано шаблон для звітів лабораторних робіт із підтримкою навігації між розділами. 
 Отримані практичні навички роботи з HTML-елементами для створення базового веб-документа.</p>
+
             `;
-        } else {
-            content.innerHTML = `Посилання на сайт. ${sectionTitle}`;
+        }
+    } else if (currentLab === 2) {
+        if (sectionNumber === 1) {
+            content.innerHTML = `
+                <h3>Тема Мета Місце</h3>
+Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ. 
+
+Мета: придбати практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону, 
+зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів             
+
+Місце: веб-застосунок для купівлі комп'ютерних ігор доступний на платформі GitHub Pages за адресою https://jupiter1323.github.io/IC-34_Web_Lab1_Motliuk/, 
+// або на локальному сервері для тестування.
+                <p>Посилання на сайт. <a href="lab2.html" class="home-link">(сайт)</a>.</p>
+            `;
+        } else if (sectionNumber === 2) {
+            content.innerHTML = `
+                <h3>Способи підключення стилів</h3>
+                <p>Описані способи підключення стилів із прикладами коду:</p>
+                Вбудовані стилі:
+                Задаються у вигляді атрибута <code>style</code> для конкретного HTML-тега:
+                <pre>
+        <code>&lt;p style="color: red; font-size: 16px;"&gt;Цей текст має червоний колір та шрифт розміром 16px.&lt;/p&gt;</code>
+                </pre>
+        
+                Внутрішні стилі:
+                Визначаються у секції <code>&lt;head&gt;</code> у спеціальному блоці <code>&lt;style&gt;</code>:
+                <pre>
+        <code>&lt;head&gt;
+            &lt;style&gt;
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f5f5f5;
+                }
+                h1 {
+                    color: #2c3e50;
+                    text-align: center;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;</code>
+                </pre>
+        
+                Зовнішні стилі:
+                Підключаються через окремий CSS-файл за допомогою тега <code>&lt;link&gt;</code>:
+                <pre>
+        <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+                </pre>
+                <p>Файл <code>styles.css</code>:</p>
+                <pre>
+        <code>body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }</code>
+                </pre>
+        
+                Динамічні стилі з JavaScript:
+                Зміна стилів елементів за допомогою скрипта:
+                <pre>
+        <code>&lt;script&gt;
+            document.getElementById('admin').style.backgroundColor = '#dff9fb';
+        &lt;/script&gt;</code>
+                </pre>
+            `;
+        }
+         else if (sectionNumber === 3) {
+            content.innerHTML = `
+                <h3>Селектори</h3>
+                Селектор тегу
+Селектори тегу дозволяють застосовувати стилі до всіх елементів із вказаним тегом.
+HTML-код:
+
+html
+Копировать
+Редактировать
+<p>Це приклад абзацу.</p>
+<p>Цей текст теж використовує селектор тегу.</p>
+CSS-код:
+
+css
+Копировать
+Редактировать
+p {
+    color: blue;
+    font-size: 18px;
+}
+Результат:
+Всі абзаци <p> матимуть синій текст і розмір шрифту 18px.
+            `;
+        } else if (sectionNumber === 4) {
+            content.innerHTML = `
+                <h3>Селектор тегу</h3>
+               
+Селектор тегу
+Селектори тегу дозволяють застосовувати стилі до всіх елементів із вказаним тегом.
+HTML-код:
+
+html
+Копировать
+Редактировать
+<p>Це приклад абзацу.</p>
+<p>Цей текст теж використовує селектор тегу.</p>
+CSS-код:
+
+css
+Копировать
+Редактировать
+p {
+    color: blue;
+    font-size: 18px;
+}
+Результат:
+Всі абзаци <p> матимуть синій текст і розмір шрифту 18px.
+              ${imageCaseHTML3}
+            `;
+        } else if (sectionNumber === 5) {
+            content.innerHTML = `
+                <h3>Селектор класу</h3>
+                Селектор класу
+Селектори класу дозволяють стилізувати певні елементи, до яких застосований клас.
+HTML-код:
+
+html
+Копировать
+Редактировать
+<div class="highlight">Цей текст має спеціальне оформлення.</div>
+<div>Цей текст використовує стандартні стилі.</div>
+CSS-код:
+
+css
+Копировать
+Редактировать
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+Результат:
+Текст із класом highlight матиме жовтий фон і жирний шрифт.
+             ${imageCaseHTML4}
+            `;
+        } else if (sectionNumber === 6) {
+            content.innerHTML = `
+     <h3>Селектор ідентифікаторів</h3>
+                Селектор ідентифікаторів
+Селектори ідентифікаторів стилізують конкретний елемент із заданим ідентифікатором.
+HTML-код:
+
+html
+Копировать
+Редактировать
+<h1 id="main-title">Це головний заголовок</h1>
+CSS-код:
+
+css
+Копировать
+Редактировать
+#main-title {
+    color: green;
+    text-align: center;
+}
+Результат:
+Заголовок із ідентифікатором main-title матиме зелений колір і буде вирівняний по центру.
+              ${imageCaseHTML5}
+            `;
+        } else if (sectionNumber === 7) {
+            content.innerHTML = `
+                <h3>Інші селектори</h3>
+                Інші селектори
+Сюди входять сусідні, дочірні селектори, селектори атрибутів та універсальні селектори.
+
+HTML-код:
+
+html
+Копировать
+Редактировать
+<ul>
+    <li>Елемент списку 1</li>
+    <li>Елемент списку 2</li>
+</ul>
+<p title="підказка">Текст із атрибутом</p>
+CSS-код:
+
+css
+Копировать
+Редактировать
+li + li {
+    font-style: italic;
+}
+p[title] {
+    border: 1px dashed red;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+Результат:
+
+Другий <li> матиме курсив.
+<p> із атрибутом title матиме червону пунктирну рамку.
+                
+            `;
+        } else if (sectionNumber === 8) {
+            content.innerHTML = `
+                <h3>CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки</h3>
+                CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки
+                <p>Шрифт Arial використовується для всіх текстових елементів. Заголовки <code>&lt;h1&gt;</code> і <code>&lt;h2&gt;</code> вирівняні по центру, а для абзаців <code>&lt;p&gt;</code> задано міжрядковий інтервал 1.6. Клас <code>.advanced</code> додає ефект тіні та курсив.</p>
+                <p>Таблиці мають мінімалістичне оформлення: клітинки з обрамленням, а заголовки таблиць виділені синім фоном та білим текстом.</p>
+                <p>Фон для тіла сторінки — світлий, а для секцій застосовано білий фон з легкими тінями, що додає естетичності.</p>
+                <p>Елементи з класами <code>.container</code> мають обрамлення і округлені кути для більш м'якого вигляду.</p>
+                <p>Списки оформлені з маркерами та відступами для зручного перегляду.</p>
+            `;
+        }else if (sectionNumber === 9) {
+            content.innerHTML = `
+                <h3>Висновки</h3>
+                Висновок:  
+У ході роботи було опрацьовано використання каскадних таблиць стилів (CSS) для оформлення веб-сторінок. Реалізовано селектори тегів, класів, ідентифікаторів, а також інші селектори.  
+Застосовано CSS-властивості для оформлення тексту, шрифтів, таблиць, списків, фону та відступів. Створено звітний HTML-документ із демонстрацією результатів.  
+Отримано практичні навички, необхідні для створення структурованих і стильних веб-сторінок.
+            `;
         }
     } else {
         content.innerHTML = `Вміст для лабораторної роботи №${currentLab}. ${sectionTitle}`;
-=======
-    if (sectionNumber === 4) {
-        // Просто відображаємо текст без зображення для section4
-        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
-    } else {
-        content.innerHTML = `Вміст для лабораторної роботи №${currentLab}.${sectionNumber} (${sectionTitle})`;
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
     }
 }
 

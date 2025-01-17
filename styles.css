@@ -19,7 +19,6 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     background-color: #fff;
-<<<<<<< HEAD
     min-height: 150px;
 }
 
@@ -37,9 +36,6 @@ body {
     padding: 10px;
     align-items: center;
     justify-content: center;
-=======
-    min-height: 150px; 
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .header-text {
@@ -73,7 +69,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
     overflow: hidden; 
 }
 
@@ -82,14 +77,6 @@ body {
     height: auto; 
     border-radius: 10px;
     object-fit: cover; 
-=======
-}
-
-.photo-student img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .menu {
@@ -110,18 +97,12 @@ body {
     flex: 1;
     white-space: nowrap;
     font-size: 14px;
-<<<<<<< HEAD
     transition: background-color 0.3s ease, transform 0.3s ease;
-=======
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .menu button:hover {
     background-color: #e0e0e0;
-<<<<<<< HEAD
     transform: scale(1.05);
-=======
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .menu-row {
@@ -159,25 +140,16 @@ body {
 .sidebar button.small {
     font-size: 12px;
     margin-left: 30px;
-<<<<<<< HEAD
     width: calc(100% - 30px);
-=======
-    width: calc(100% - 30px)
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .main {
     flex: 2;
     display: flex;
-<<<<<<< HEAD
     justify-content: flex-start; 
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
-=======
-    justify-content: center;
-    align-items: center;
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .main .content {
@@ -187,20 +159,12 @@ body {
     padding: 20px;
     height: 100%;
     width: 100%;
-<<<<<<< HEAD
     text-align: left;
     box-sizing: border-box;
     white-space: pre-wrap; 
     word-wrap: break-word;
     padding-left: 20px; 
     padding-top: 10px;
-=======
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
 }
 
 .menu .active {
@@ -210,7 +174,6 @@ body {
 .sidebar .active {
     font-size: 20px;
 }
-<<<<<<< HEAD
 
 h3 {
     margin-top: 30px;
@@ -277,5 +240,3 @@ h3 {
         padding: 15px;
     }
 }
-=======
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69

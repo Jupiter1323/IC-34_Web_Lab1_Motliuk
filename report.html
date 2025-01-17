@@ -24,15 +24,9 @@
         <div class="menu">
             <div class="menu-row">
                 <button onclick="selectLab(1)" id="lab1">Лабораторна робота №1</button>
-<<<<<<< HEAD
-                <button>Лабораторна робота №2</button> 
-                <button>Лабораторна робота №3</button> 
-                <button>Лабораторна робота №4</button> 
-=======
                 <button onclick="selectLab(2)" id="lab2">Лабораторна робота №2</button>
-                <button onclick="selectLab(3)" id="lab3">Лабораторна робота №3</button>
-                <button onclick="selectLab(4)" id="lab4">Лабораторна робота №4</button>
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
+                <button>Лабораторна робота №3</button>
+                <button>Лабораторна робота №4</button>
                 <button>Лабораторна робота №5</button>
             </div>
             <div class="menu-row">
@@ -43,13 +37,9 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        <!-- Content Section for Lab 1 -->
-=======
-        <!-- Content Section -->
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
         <div class="content-section">
-            <div class="sidebar">
+            <div id="sidebar1" class="sidebar">
+                <!-- Sidebar for Lab 1 -->
                 <button class="medium" onclick="showContent(1, 'Опис структури')" id="section1">Опис структури</button>
                 <button class="medium" onclick="showContent(2, 'Тема Мета Місце')" id="section2">Тема Мета Місце</button>
                 <button class="medium" onclick="showContent(3, 'СТРУКТУРА ДОКУМЕНТА')" id="section3">СТРУКТУРА ДОКУМЕНТА</button>
@@ -58,19 +48,24 @@
                 <button class="small" onclick="showContent(6, 'HTML-код ЗОБРАЖЕННЯ')" id="section6">HTML-код ЗОБРАЖЕННЯ</button>
                 <button class="medium" onclick="showContent(7, 'ВИСНОВКИ')" id="section7">ВИСНОВКИ</button>
             </div>
+
+            <div id="sidebar2" class="sidebar" style="display: none;">
+                <!-- Sidebar for Lab 2 -->
+                <button class="medium" onclick="showContent(1, 'Тема Мета Місце ЛР2 Місце розташування сайту, звіту')" id="section1">Тема Мета Місце ЛР2 Місце розташування сайту, звіту</button>
+                <button class="medium" onclick="showContent(2, 'Способи підключення стилів')" id="section2">Способи підключення стилів</button>
+                <button class="medium" onclick="showContent(3, 'Селектори')" id="section3">Селектори</button>
+                <button class="small" onclick="showContent(4, 'Селектор тегу')" id="section4">Селектор тегу</button>
+                <button class="small" onclick="showContent(5, 'Селектор класу')" id="section5">Селектор класу</button>
+                <button class="small" onclick="showContent(6, 'Селектор ідентифікаторів')" id="section6">Селектор ідентифікаторів</button>
+                <button class="medium" onclick="showContent(7, 'Інші селектори')" id="section7">Інші селектори</button>
+                <button class="medium" onclick="showContent(8, 'CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки, CSS Просунутий')" id="section8">CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки, CSS Просунутий</button>
+                <button class="medium" onclick="showContent(9, 'ВИСНОВКИ')" id="section9">ВИСНОВКИ</button>
+            </div>
+
             <div class="main">
                 <div class="content" id="mainContent">
-                    Вміст для лабораторної роботи №1.
-<<<<<<< HEAD
-                    <a href="index.html" class="home-link">(сайт)</a>
-                </div>
-
-                <!-- Screenshot Container - initially hidden -->
-                <div id="screenshotsContainer" class="screenshots-container" style="display: none;">
                     
-=======
-                    <a href="index.html" class="home-link">(сайт)</a> 
->>>>>>> 72a859ae5147d2e7d415d486bcde21eee3c61e69
+                    
                 </div>
             </div>
         </div>
