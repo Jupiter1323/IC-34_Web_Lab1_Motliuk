@@ -303,15 +303,11 @@ function showContent(sectionNumber, sectionTitle) {
 HTML-код:
 
 html
-Копировать
-Редактировать
 <p>Це приклад абзацу.</p>
 <p>Цей текст теж використовує селектор тегу.</p>
 CSS-код:
 
 css
-Копировать
-Редактировать
 p {
     color: blue;
     font-size: 18px;
@@ -328,15 +324,11 @@ p {
 HTML-код:
 
 html
-Копировать
-Редактировать
 <p>Це приклад абзацу.</p>
 <p>Цей текст теж використовує селектор тегу.</p>
 CSS-код:
 
 css
-Копировать
-Редактировать
 p {
     color: blue;
     font-size: 18px;
@@ -353,16 +345,11 @@ p {
 HTML-код:
 
 html
-Копировать
-Редактировать
 <div class="highlight">Цей текст має спеціальне оформлення.</div>
 <div>Цей текст використовує стандартні стилі.</div>
 CSS-код:
 
-css
-Копировать
-Редактировать
-.highlight {
+css.highlight {
     background-color: yellow;
     font-weight: bold;
 }
@@ -378,14 +365,12 @@ css
 HTML-код:
 
 html
-Копировать
-Редактировать
+
 <h1 id="main-title">Це головний заголовок</h1>
 CSS-код:
 
 css
-Копировать
-Редактировать
+
 #main-title {
     color: green;
     text-align: center;
@@ -403,8 +388,6 @@ css
 HTML-код:
 
 html
-Копировать
-Редактировать
 <ul>
     <li>Елемент списку 1</li>
     <li>Елемент списку 2</li>
@@ -413,8 +396,6 @@ html
 CSS-код:
 
 css
-Копировать
-Редактировать
 li + li {
     font-style: italic;
 }
